@@ -8,10 +8,11 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+	
 		
-		<context:property-placeholder location="classpath:database/jdbc.properties" />
-
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+	<context:property-placeholder location="classpath:database/jdbc.properties" />
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<property name="driverClassName" value="${jdbc.driverClassName}" />
 		<property name="url" value="${jdbc.url}" />
 		<property name="username" value="${jdbc.username}" />
@@ -21,15 +22,15 @@
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
-
-	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="dataSource" />
-		<property name="mapperLocations" value="classpath:com/coder/myapp/**/*.xml"/>
-	</bean>
 	
 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mapperLocations" value="classpath:com/kosa/myapp/**/*.xml"/>
 	</bean>
 	<tx:annotation-driven/>
 	
@@ -43,12 +44,6 @@
 		</property>
 		<property name="defaultErrorView" value="error/default" />
 	</bean>
-
-	<mybatis-spring:scan 	base-package="com.kosa.myapp.patient.dao"/>
-	<context:component-scan base-package="com.kosa.myapp.patient.service" />
-
-	<mybatis-spring:scan 	base-package="com.kosa.myapp.vaccine.dao"/>
-	<context:component-scan base-package="com.kosa.myapp.vaccine.service" />
 
 </beans>
 	
