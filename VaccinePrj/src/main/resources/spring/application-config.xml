@@ -10,6 +10,8 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 	
 		
+	<mybatis-spring:scan base-package="com.kosa.myapp"/>
+	<tx:annotation-driven/>	
 	<context:property-placeholder location="classpath:database/jdbc.properties" />
 	
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
