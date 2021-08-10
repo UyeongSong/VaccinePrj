@@ -14,9 +14,13 @@
 </select>
   -->
 
-
-<select id="selectVacInfo" parameterType="com.kosa.myapp.VacVO" >
-	select* from vaccination where rot_num = #{rotNum}
+<select id="selectVacInfo" parameterType="string" resultType="com.kosa.myapp.VacVO" >
+	select
+		vac_type as vacType,
+		prod_date as prodDate,
+		producer as producer,
+		rot_num as rot_num	
+	from vaccination where rot_num = #{rotNum}
 </select>
 
 <insert id="insertVacInfo" parameterType="com.kosa.myapp.VacVO">
