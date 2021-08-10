@@ -27,8 +27,10 @@ public class MainController {
 	}
 	
 	@RequestMapping(value = "/patient/getInfo", method=RequestMethod.POST)
-	public String getInfo(@PathVariable String name, String birthDate, Model model) {
-		PatientVO patient = patientService.getInfo(name, birthDate);
+	public String getInfo(String rotNum, Model model) {
+		System.out.println(rotNum);
+		PatientVO patient = patientService.getInfo(rotNum);
+		System.out.println(patient);
 		if(patient!=null) {
 			model.addAttribute("patient", patient);
 		} else {
@@ -36,10 +38,32 @@ public class MainController {
 			return "patient/info";
 		}
 		
-		VacVO vac = vacService.getVacInfo(patient.getRotNumber());
-		model.addAttribute("vac", vac);
-		
 		return "patient/info";
+	}
+	
+	
+	@RequestMapping(value ="/patient/insert", method=RequestMethod.POST)
+	public String insertPatient() {
+		
+		
+		return null;
+	}
+	
+	public String update() {
+		
+		return null;
+	}
+	
+	public String delete() {
+		return null;
+	}
+	
+	public String getPatientCount() {
+		return null;
+	}
+	
+	public String insertVac() {
+		return null;
 	}
 }
 

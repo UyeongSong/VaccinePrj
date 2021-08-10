@@ -33,9 +33,9 @@ public class PatientService implements IPatientService {
 	}
 
 	@Override
-	public PatientVO getInfo(String name, String birthDate) {
+	public PatientVO getInfo(String rotNum) {
 		
-		return patientRepository.selectInfo(name, birthDate);
+		return patientRepository.selectInfo(rotNum);
 	}
 	
 }

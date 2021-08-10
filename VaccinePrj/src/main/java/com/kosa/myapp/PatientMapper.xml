@@ -15,8 +15,16 @@
   -->
 
 
-<select id="selectInfo" parameterType="com.kosa.myapp.PatientVO" >
-	select* from patient where rot_num = #{rotNum}
+<select id="selectInfo" parameterType="string" resultType="com.kosa.myapp.PatientVO" >
+	select 
+		name as name,
+		birth_date as birthDate,
+	    phone_num as phoneNum,
+   	    gender as gender,
+	    rot_num as rotNum,
+	    first_dose as firstDose,
+	    second_dose as secondDose
+    from patient where rot_num = #{rotNum}
 </select>
 
 <insert id="insertPt" parameterType="com.kosa.myapp.PatientVO">

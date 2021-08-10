@@ -36,18 +36,6 @@
 			<th>2차 접종</th>
 			<td>${patient.secondDose}</td>
 		</tr>	
-		<tr>
-			<th>백신명</th>
-			<td>${vac.vacType}</td>
-		</tr>	
-		<tr>
-			<th>생산일자</th>
-			<td>${vac.prodDate}</td>
-		</tr>	
-		<tr>
-			<th>생산자</th>
-			<td>${vac.producer}</td>
-		</tr>		
 	</table>
 </body>
 </html>

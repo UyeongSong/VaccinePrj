@@ -11,15 +11,6 @@ public class PatientVO {
 	private String firstDose;
 	private String secondDose;
 	private int patientId;
-	
-	
-	
-	public int getPatientId() {
-		return patientId;
-	}
-	public void setPatientId(int patientId) {
-		this.patientId = patientId;
-	}
 	public String getName() {
 		return name;
 	}
@@ -32,11 +23,11 @@ public class PatientVO {
 	public void setBirthDate(java.sql.Date birthDate) {
 		this.birthDate = birthDate;
 	}
-	public String getPhoneNumber() {
+	public String getPhoneNum() {
 		return phoneNum;
 	}
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNum = phoneNumber;
+	public void setPhoneNum(String phoneNum) {
+		this.phoneNum = phoneNum;
 	}
 	public String getGender() {
 		return gender;
@@ -44,11 +35,11 @@ public class PatientVO {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public String getRotNumber() {
+	public String getRotNum() {
 		return rotNum;
 	}
-	public void setRotNumber(String rotNumber) {
-		this.rotNum = rotNumber;
+	public void setRotNum(String rotNum) {
+		this.rotNum = rotNum;
 	}
 	public String getFirstDose() {
 		return firstDose;
@@ -62,12 +53,18 @@ public class PatientVO {
 	public void setSecondDose(String secondDose) {
 		this.secondDose = secondDose;
 	}
-	@Override
-	public String toString() {
-		return "PatientVO [name=" + name + ", birthDate=" + birthDate + ", phoneNumber=" + phoneNum + ", gender="
-				+ gender + ", rotNumber=" + rotNum + ", firstDose=" + firstDose + ", secondDose=" + secondDose + "]";
+	public int getPatientId() {
+		return patientId;
+	}
+	public void setPatientId(int patientId) {
+		this.patientId = patientId;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "PatientVO [name=" + name + ", birthDate=" + birthDate + ", phoneNum=" + phoneNum + ", gender=" + gender
+				+ ", rotNum=" + rotNum + ", firstDose=" + firstDose + ", secondDose=" + secondDose + ", patientId="
+				+ patientId + "]";
+	}
 	
 }
