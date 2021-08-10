@@ -10,7 +10,16 @@ public class PatientVO {
 	private String rotNum;
 	private String firstDose;
 	private String secondDose;
+	private int patientId;
 	
+	
+	
+	public int getPatientId() {
+		return patientId;
+	}
+	public void setPatientId(int patientId) {
+		this.patientId = patientId;
+	}
 	public String getName() {
 		return name;
 	}
